@@ -20,7 +20,13 @@
 
 또한 print와 println의 차이도 명확히 이해했다. 입력 안내문에는 줄바꿈 없이 커서를 같은 줄에 두기 위해 print를, 명단 출력처럼 한 줄씩 나눠야 할 때는 println을 사용한다.
 
-### 3. 느낀 점 / 배운 점
+### 3. 스크린샷
+<img width="1280" height="832" alt="스크린샷 2026-04-04 오후 5 43 15" src="https://github.com/user-attachments/assets/923c6f1b-0801-4495-9616-c6e419d7058f" />
+<img width="1280" height="832" alt="스크린샷 2026-04-04 오후 5 43 21" src="https://github.com/user-attachments/assets/d811db96-1880-4839-80aa-754b13a641ec" />
+
+
+
+### 4. 느낀 점 / 배운 점
 
 아직은 GPT의 도움이 많이 필요한 것 같다… 전체 흐름은 대략 이해했지만, 코드로 구현하려니 어디서부터 시작해야 할지 몰랐다.
 
