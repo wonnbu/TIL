@@ -32,7 +32,7 @@ public class Main {
                 System.out.print("이름: ");
                 String name = scanner.nextLine();
 
-                boolean isDuplicate = false;//중복 검사??
+                boolean isDuplicate = false;//중복 검사
                 for (Role member : members) {
                     if (member.getName().equals(name)) {
                         isDuplicate = true;
@@ -68,7 +68,7 @@ public class Main {
 
             } else if (menu == 2) {
                 System.out.println("--전체 멤버 목록--");
-                int index = 1;//for each문도 인덱스 사용??
+                int index = 1;
                 for (Role member : members) {
                     System.out.println(index + ". " + member.getSummary());//
                     index++;
