@@ -1,0 +1,117 @@
+package Week5.package1;
+
+import Week5.role.Lion;
+import Week5.role.Role;
+import Week5.role.Staff;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        MemberService memberService = new MemberService();
+
+        while(true) {
+            System.out.println();
+            System.out.println("===== 멋사 멤버 관리 시스템(Step1 : 레이어 분리)");
+            System.out.println("1. 멤버 등록");
+            System.out.println("2. 전체 멤버 조회");
+            System.out.println("3. 이름으로 검색");
+            System.out.println("4. 종료");
+            System.out.print("선택: ");
+            int menu = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println();
+
+            if (menu == 1) {
+                System.out.println("--등록 화면--");
+                System.out.print("역할 선택(1: 아기사자, 2: 운영진): ");
+                int roleMenu = scanner.nextInt();
+                scanner.nextLine();
+
+                Role role;
+
+                if (roleMenu == 1) {
+                    System.out.println();
+                    System.out.println("정보 입력");
+                    System.out.print("이름: ");
+                    String name = scanner.nextLine();
+                    System.out.print("전공: ");
+                    String major = scanner.nextLine();
+                    System.out.print("기수: ");
+                    int generation = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.print("파트: ");
+                    String part = scanner.nextLine();
+                    System.out.print("학번: ");
+                    int studentId = scanner.nextInt();
+                    scanner.nextLine();
+
+                    role = new Lion(name, major, generation, part, studentId);
+
+                } else if (roleMenu == 2) {
+                    System.out.println();
+                    System.out.println("운영진 정보 입력");
+
+                    System.out.print("이름: ");
+                    String name = scanner.nextLine();
+
+                    System.out.print("전공: ");
+                    String major = scanner.nextLine();
+
+                    System.out.print("기수: ");
+                    int generation = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.print("파트: ");
+                    String part = scanner.nextLine();
+
+                    System.out.print("직책: ");
+                    String position = scanner.nextLine();
+
+                    role = new Staff(name, major, generation, part, position);
+
+                } else {
+                    System.out.println("잘못된 역할 선택입니다.");
+                    continue;
+                }
+                boolean result = memberService.register(role);
+
+                if (result) {
+                    System.out.println("등록 완료: " + role.getName());
+                } else {
+                    System.out.println("등록 실패: 이미 존재하는 이름입니다.");
+                }
+            } else if (menu == 2) {
+                System.out.println("--전체 멤버 목록--");
+                List<Role> members = memberService.findAll();
+
+                int index = 1;
+                for (Role member : members) {
+                    System.out.println(index + ". " + member.getSummary());
+                    index++;
+                }
+                System.out.println("총 " + members.size() + "명");
+            } else if (menu == 3) {
+                System.out.println("--이름으로 검색--");
+                System.out.print("검색할 이름: ");
+                String searchName = scanner.nextLine();
+
+                Role member = memberService.findByName(searchName);
+
+                if (member != null) {
+                    System.out.println("===== 검색 결과 =====");
+                    System.out.println(member.getInfo());
+                    System.out.println("과제 제출 가능: " + member.getPolicy().submit());
+                } else {
+                    System.out.println("해당 이름의 멤버가 없습니다.");
+                }
+            } else if (menu == 4) {
+                System.out.println("프로그램을 종료합니다.");
+                break;
+
+            }
+        }
+    }
+}
