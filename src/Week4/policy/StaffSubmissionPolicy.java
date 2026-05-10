@@ -1,4 +1,4 @@
-package week4.policy;
+package Week4.policy;
 
 public class StaffSubmissionPolicy implements SubmissionPolicy {
     @Override

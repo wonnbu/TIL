@@ -1,7 +1,7 @@
-package week4.role;
+package Week4.role;
 
-import week4.policy.StaffSubmissionPolicy;
-import week4.policy.SubmissionPolicy;
+import Week4.policy.StaffSubmissionPolicy;
+import Week4.policy.SubmissionPolicy;
 
 public class Staff extends Role {
     private String position;

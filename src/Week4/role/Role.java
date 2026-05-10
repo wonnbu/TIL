@@ -1,6 +1,6 @@
-package week4.role;
+package Week4.role;
 
-import week4.policy.SubmissionPolicy;
+import Week4.policy.SubmissionPolicy;
 
 public abstract class Role {
     protected String name;

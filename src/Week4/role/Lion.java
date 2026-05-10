@@ -1,7 +1,7 @@
-package week4.role;
+package Week4.role;
 
-import week4.policy.LionSubmissionPolicy;
-import week4.policy.SubmissionPolicy;
+import Week4.policy.LionSubmissionPolicy;
+import Week4.policy.SubmissionPolicy;
 
 public class Lion extends Role {
     public int studentNumber;//private상없?
